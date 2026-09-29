@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kapela Noční Ozvěny</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-inner">
+      <a class="logo" href="index.html">Noční Ozvěny</a>
+      <nav>
+        <a href="index.html">Úvod</a>
+        <a href="cenik.html">Ceník</a>
+        <a href="galerie.html">Galerie</a>
+        <a href="admin.html">Správa</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <p class="hero-note">Blues &amp; rock · Praha</p>
+    <h1>Kapela <span>Noční Ozvěny</span></h1>
+    <p class="lead">Živá hudba na svatby, firemní večírky a festivaly. Čtyři hráči, jeden zvuk, žádná playbacková nuda.</p>
+
+    <section>
+      <h2>O nás</h2>
+      <p>Kapela Noční Ozvěny hraje blues a rock už od roku 2019. Jsme čtyři kamarádi, kteří mají rádi živou hudbu a dobrou náladu.</p>
+      <p>Hrajeme na svatbách, firemních večírcích, narozeninách i menších festivalech. Umíme hrát akusticky i s plnou aparaturou – podle toho, co se hodí k místu a příležitosti.</p>
+      <p>Záleží nám na tom, aby se hosté bavili a akce dobře dopadla. Když hledáte spolehlivou kapelu s živým zvukem, ozvěte se nám.</p>
+    </section>
+
+    <section>
+      <h2>Nadcházející termíny</h2>
+      <div id="public-events"></div>
+      <p class="hint">Termíny spravuješ na stránce <a href="admin.html">Správa</a>.</p>
+    </section>
+
+    <section>
+      <h2>Kontakt</h2>
+      <div class="contact-grid">
+        <p>Adresa: Hudební 12, 150 00 Praha 5</p>
+        <p>Telefon: <a href="tel:+420777123456">777 123 456</a></p>
+        <p>E-mail: <a href="mailto:booking@nocni-ozveny.cz">booking@nocni-ozveny.cz</a></p>
+      </div>
+      <p>Otevírací doba pro domluvu:</p>
+      <ul>
+        <li>Pondělí – Pátek: 10:00 – 18:00</li>
+        <li>Sobota: 10:00 – 14:00</li>
+        <li>Neděle: pouze po předchozí domluvě</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    © 2026 · web vytvořil žák IT2
+  </footer>
+
+  <script src="events.js"></script>
+  <script>renderPublicList("public-events");</script>
+</body>
+</html>

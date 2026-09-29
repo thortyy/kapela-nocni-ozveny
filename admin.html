@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Správa termínů – Kapela Noční Ozvěny</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-inner">
+      <a class="logo" href="index.html">Noční Ozvěny</a>
+      <nav>
+        <a href="index.html">Úvod</a>
+        <a href="cenik.html">Ceník</a>
+        <a href="galerie.html">Galerie</a>
+        <a href="admin.html">Správa</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <p class="hero-note">Admin</p>
+    <h1>Kapela Noční Ozvěny</h1>
+    <p class="lead">Tady můžeš přidávat a mazat termíny koncertů. Změny se uloží v tomto prohlížeči a hned se ukážou na úvodní stránce.</p>
+
+    <section>
+      <h2>Přidat termín</h2>
+      <form id="event-form" class="admin-form">
+        <label>
+          Datum
+          <input type="date" name="date" required>
+        </label>
+        <label>
+          Místo / akce
+          <input type="text" name="place" placeholder="např. Jazz Dock, Praha" required>
+        </label>
+        <label>
+          Poznámka
+          <input type="text" name="note" placeholder="volitelné">
+        </label>
+        <button type="submit" class="btn">Přidat termín</button>
+      </form>
+      <p class="hint">Poznámka: data se ukládají jen v tvém prohlížeči (localStorage). Na cizím PC je neuvidíš – skutečný server přijde až s Flaskem.</p>
+    </section>
+
+    <section>
+      <h2>Uložené termíny</h2>
+      <div id="admin-events"></div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    © 2026 · web vytvořil žák IT2
+  </footer>
+
+  <script src="events.js"></script>
+  <script>
+    renderAdminTable("admin-events");
+    document.getElementById("event-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var fd = new FormData(e.target);
+      addEvent(fd.get("date"), fd.get("place"), fd.get("note"));
+      e.target.reset();
+      renderAdminTable("admin-events");
+    });
+  </script>
+</body>
+</html>
